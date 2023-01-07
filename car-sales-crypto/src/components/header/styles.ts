@@ -3,31 +3,38 @@ import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
 
-	display: grid;
-	grid-template-columns: 1fr 5fr;
-
-	align-items: center;
-
-	padding: 2rem;
+	background-color: aliceblue;
 	box-sizing: border-box;
-
-`
-
-export const RoutesList = styled.ul`
-	justify-self: flex-end;
-	width: 25%;
+	padding: 2vh 1vw;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	justify-items: center;
+	align-items: center;
+	grid-template-columns: 1fr 2fr;
+
 `
 
-export const RoutesListItem = styled.li<{selected: boolean}>`
+export const Title = styled.h1`
 
-	cursor: pointer;
-	transition: 0.3s all;
-	color: ${props => props.selected ? "cyan" : "black"};
-	&:hover {
-		color: lightcyan;
+	font-weight: 400;
+	letter-spacing: 0.25vw;
+	display: grid;
+	align-items: center;
+	grid-template-columns: auto 1fr;
+	img {
+		margin-left: 15px;
+		width: 35px;
+		height: 35px;
 	}
 
+`
+
+export const UserPanel = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	justify-self: flex-end;
+	width: 40%;
+	img {
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+	}
 `

@@ -3,7 +3,10 @@ import {
 	createBrowserRouter, Route,
 } from "react-router-dom";
 import Layout from '../components/layout';
-import Login from '../components/login';
+import CarPage from '../pages/car-page';
+import Home from '../pages/home';
+import Login from '../pages/login';
+import Messages from '../pages/messages';
 
 const router = createBrowserRouter([
 	{
@@ -11,9 +14,21 @@ const router = createBrowserRouter([
 	  element: <Layout/>,
 	  children: [
 		{
+			path: "/",
+			element: <Home/>
+		},
+		{
 			path: "/login",
-			element: <Login />,
-		  },
+			element: <Login/>,
+		},
+		{
+			path: "/messages",
+			element: <Messages/>
+		},
+		{
+			path: "/car/:carId",
+			element: <CarPage/>
+		}
 	  ]
 	},
 ]);

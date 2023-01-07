@@ -1,36 +1,29 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router';
-import { HeaderWrapper, RoutesList, RoutesListItem } from './styles';
-
-const routes = [
-	{name: "Home", path: "/"},
-	{name: "Login", path: "/login"},
-]
+import { HeaderWrapper, Title, UserPanel } from './styles';
+import logo from '../../assets/icons/car-price.svg';
+import notification from '../../assets/icons/notifications.svg';
+import messages from '../../assets/icons/message.svg';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
 	const navigate = useNavigate();
-	const location = useLocation();
 
 	return (
 		<HeaderWrapper>
-			<h1>Car Sales Crypto</h1>
-			<RoutesList>
-				{routes.map((route, _ind) => {
-					return (
-						<RoutesListItem 
-							selected={location.pathname === route.path}
-							key={route.name + _ind}
-							onClick={() => navigate(route.path)}
-						>
-							{route.name}
-						</RoutesListItem>
-					)									
-				})}
-			</RoutesList>
+			<Title> 
+				Car Sales Crypto
+				<img src={logo}/>
+			</Title>
+			<UserPanel>
+				<img src={notification}/>
+				<img src={messages} onClick={() => navigate("/messages")}/>
+				<Button variant='contained' onClick={() => navigate("/login")}>Login</Button>
+			</UserPanel>
 		</HeaderWrapper>
 	)
 
 }
 
-export default Header
+export default Header;
