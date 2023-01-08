@@ -14,6 +14,7 @@ export const HeaderWrapper = styled.div`
 
 export const Title = styled.h1`
 
+	cursor: pointer;
 	font-weight: 400;
 	letter-spacing: 0.25vw;
 	display: grid;
@@ -29,7 +30,7 @@ export const Title = styled.h1`
 
 export const UserPanel = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 1fr 2fr;
+	grid-template-columns: 1fr 1fr 1fr 2fr;
 	justify-self: flex-end;
 	width: 40%;
 	img {
