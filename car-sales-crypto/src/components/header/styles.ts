@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import styled from "styled-components";
 
 
@@ -28,14 +29,23 @@ export const Title = styled.h1`
 
 `
 
-export const UserPanel = styled.div`
+export const UserPanel = styled.div<{isLoggedIn: boolean}>`
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 2fr;
+	grid-template-columns: ${props => props.isLoggedIn ? "repeat(3, 1fr)" : "1fr"};
 	justify-self: flex-end;
+	justify-items: center;
 	width: 40%;
 	img {
 		cursor: pointer;
 		width: 30px;
 		height: 30px;
 	}
+`
+
+export const LoginButton = styled(Button)`
+
+	display: grid;
+	width: 125px;
+	justify-self: flex-end;
+
 `
